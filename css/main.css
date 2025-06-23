@@ -1768,6 +1768,97 @@ a:hover {
   white-space: nowrap;
 }
 
+.main-flex {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: var(--bg-body, #fff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0 0 0;
+  box-shadow: 1px 0 0 0 #eee;
+  min-height: 100vh;
+  z-index: 10;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.navbar-vertical {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.navbar-vertical ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.navbar-vertical .nav-item {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+
+.navbar-vertical .nav-item a {
+  display: block;
+  padding: 12px 32px;
+  font-size: 1.6rem;
+  color: var(--color-text-a);
+  text-decoration: none;
+  border-radius: 0 20px 20px 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar-vertical .nav-item a:hover,
+.navbar-vertical .nav-item.active a {
+  background: var(--color-bg-hover, #f5f5f5);
+  color: var(--color-text-a-active);
+}
+
+/* Remove old .header and .navbar styles for horizontal layout */
+.header, .navbar {
+  display: none !important;
+}
+
+/* Responsive: stack sidebar on top for small screens */
+@media (max-width: 900px) {
+  .main-flex {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    min-height: unset;
+    flex-direction: row;
+    justify-content: flex-start;
+    box-shadow: none;
+    padding: 10px 0;
+  }
+  .navbar-vertical {
+    margin-top: 0;
+  }
+  .navbar-vertical ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .navbar-vertical .nav-item a {
+    padding: 10px 16px;
+    border-radius: 10px;
+  }
+}
+
 .footer {
   padding-top: 30px;
   font-size: 1.2rem;

@@ -65,7 +65,8 @@
 
   <body>
     <div id="app">
-      <div class="header">
+      <div class="main-flex">
+        <div class="sidebar">
   <div class="avatar">
     <a href="/">
       <!-- 头像取消懒加载，添加no-lazy -->
@@ -75,7 +76,7 @@
     </a>
     <div class="nickname"><a href="/">Oranges</a></div>
   </div>
-  <div class="navbar">
+  <nav class="navbar-vertical">
     <ul>
       
         <li class="nav-item" data-path="/">
@@ -99,16 +100,16 @@
         </li>
       
     </ul>
-  </div>
+  </nav>
 </div>
 
 
 <script src="/js/activeNav.js"></script>
 
 
-
-      <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <div class="main-content">
+          <div class="flex-container">
+            <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
 
 <!-- last: 按年份把文章分组，当前遍历到的年份 -->
 <!-- now: 当前遍历到的文章的发布年份 -->
@@ -135,7 +136,7 @@
   </div>
 </div>
 
-        
+            
 <div class="footer">
   <div class="social">
     <ul>
@@ -151,13 +152,12 @@
     </ul>
   </div>
   
-    
-    <div class="footer-more">
-      
-        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2025 Oranges</a>
-        
-    </div>
   
+    
+    
+    
+    
+    
     
     <div class="footer-more">
       
@@ -166,10 +166,18 @@
     </div>
   
   
+  
+    <div class="footer-more copyright">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2025 Oranges</a>
+      
+    </div>
+  
 </div>
 
+          </div>
+        </div>
       </div>
-
       <div class="tools-bar">
         <div class="back-to-top tools-bar-item hidden">
   <a href="javascript: void(0)">
@@ -179,7 +187,6 @@
 
 
 <script src="/js/backtotop.js"></script>
-
 
 
         
@@ -374,7 +381,6 @@
 
 
 
-
         
   <div class="tools-bar-item theme-icon" id="switch-color-scheme">
     <a href="javascript: void(0)">
@@ -384,7 +390,6 @@
 
   
 <script src="/js/colorscheme.js"></script>
-
 
 
 

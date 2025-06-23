@@ -67,6 +67,9 @@
     <div id="app">
       <div class="main-flex">
         <div class="sidebar">
+  <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar" style="display:none;">
+    &#9776;
+  </button>
   <div class="avatar">
     <a href="/">
       <!-- 头像取消懒加载，添加no-lazy -->
@@ -74,41 +77,72 @@
         <img src="/images/avatar.png" alt="">
       
     </a>
-    <div class="nickname"><a href="/">Oranges</a></div>
+    <div class="nickname"><a href="/">Shangzhi Xu</a></div>
+    <div class="avatar-bio" style="font-size:1.3rem;line-height:1.6;margin-top:4px;white-space:pre-line;">
+      CS PhD @UNSW
+      Fuzzing | Static Analysis | Debugging | Bug Huntr
+      公众号：SecNotes欢迎师傅们来玩
+    </div>
   </div>
-  <nav class="navbar-vertical">
-    <ul>
-      
-        <li class="nav-item" data-path="/">
-          <a href="/">Home</a>
-        </li>
-      
-        <li class="nav-item" data-path="/archives/">
-          <a href="/archives/">Archives</a>
-        </li>
-      
-        <li class="nav-item" data-path="/tags/">
-          <a href="/tags/">Tags</a>
-        </li>
-      
-        <li class="nav-item" data-path="/friends/">
-          <a href="/friends/">Friends</a>
-        </li>
-      
-        <li class="nav-item" data-path="/about/">
-          <a href="/about/">About</a>
-        </li>
-      
-    </ul>
-  </nav>
+  <div class="sidebar-menu">
+    <nav class="navbar-vertical">
+      <ul>
+        
+          <li class="nav-item" data-path="/">
+            <a href="/">Home</a>
+          </li>
+        
+          <li class="nav-item" data-path="/archives/">
+            <a href="/archives/">Blogs</a>
+          </li>
+        
+          <li class="nav-item" data-path="/tags/">
+            <a href="/tags/">Tags</a>
+          </li>
+        
+          <li class="nav-item" data-path="/friends/">
+            <a href="/friends/">Friends</a>
+          </li>
+        
+          <li class="nav-item" data-path="/about/">
+            <a href="/about/">About</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </div>
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var toggle = document.getElementById('sidebar-toggle');
+  var menu = document.querySelector('.sidebar-menu');
+  function checkSidebar() {
+    if (window.innerWidth <= 900) {
+      toggle.style.display = 'block';
+      menu.style.display = 'none';
+    } else {
+      toggle.style.display = 'none';
+      menu.style.display = 'block';
+    }
+  }
+  toggle.addEventListener('click', function() {
+    if (menu.style.display === 'block') {
+      menu.style.display = 'none';
+    } else {
+      menu.style.display = 'block';
+    }
+  });
+  window.addEventListener('resize', checkSidebar);
+  checkSidebar();
+});
+</script>
 
 <script src="/js/activeNav.js"></script>
 
 
         <div class="main-content">
-          <div class="flex-container">
+          <div class="content-above-footer">
             <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
 
 <!-- last: 按年份把文章分组，当前遍历到的年份 -->
@@ -136,7 +170,8 @@
   </div>
 </div>
 
-            
+          </div>
+          
 <div class="footer">
   <div class="social">
     <ul>
@@ -175,7 +210,6 @@
   
 </div>
 
-          </div>
         </div>
       </div>
       <div class="tools-bar">

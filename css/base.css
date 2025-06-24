@@ -732,7 +732,10 @@ body.hidden {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 0;
+  /* at the top of the page, padding 1/4 of the height of the page */
+  /* padding change every time the page is resized */
+  padding-top: calc(100vh / 5);
+  transition: padding-top 0.3s ease-in-out;
 }
 .sidebar ul {
   list-style: none; /* 移除小点 */
@@ -905,10 +908,12 @@ body.hidden {
 }
 
 .container.index {
-  margin-left: 370px; /* Match sidebar width */
-  max-width: calc(100vw - 370px - 40px); /* 40px for right padding/margin */
+  margin-left: 160px;
+  max-width: calc(100vw - 260px - 40px);
   min-width: 0;
   box-sizing: border-box;
+  /*box size change every time the page is resized*/
+  transition: box-size 0.3s ease-in-out;
 }
 
 .post-list {
@@ -1079,8 +1084,8 @@ body.hidden {
 
 @media (max-width: 1200px) {
   .container.index {
-    margin-left: 270px;
-    max-width: calc(100vw - 270px - 16px);
+    margin-left: 140px;
+    max-width: calc(100vw - 140px - 16px);
   }
 }
 @media (max-width: 900px) {

@@ -1148,4 +1148,179 @@ body.hidden {
   }
 }
 
+/* Responsive scaling for main sections and items */
+.education-section,
+.skills-section,
+.publications-section,
+.projects-section {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  padding: clamp(12px, 4vw, 28px) clamp(8px, 4vw, 24px);
+  margin-bottom: clamp(1.2em, 3vw, 2.5em);
+}
+
+.education-section h2,
+.skills-section h2,
+.publications-section h2,
+.projects-section h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.edu-item {
+  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  padding: clamp(8px, 2vw, 18px) 0;
+  margin-bottom: clamp(10px, 2vw, 22px);
+}
+
+.edu-school {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+}
+
+.edu-degree,
+.edu-details,
+.edu-right {
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+}
+
+.edu-scholarships {
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+}
+
+@media (max-width: 600px) {
+  .education-section,
+  .skills-section,
+  .publications-section,
+  .projects-section {
+    padding: 8px 2px;
+  }
+  .edu-item {
+    flex-direction: column;
+    padding: 6px 0;
+  }
+  .edu-left, .edu-right {
+    max-width: 100%;
+    min-width: 0;
+    text-align: left;
+  }
+  .edu-right {
+    margin-top: 4px;
+  }
+}
+
+.sidebar-menu {
+  margin-top: 0;
+}
+
+@media (max-width: 1200px) {
+  .container.index {
+    margin-left: 140px;
+    max-width: calc(100vw - 140px - 16px);
+  }
+}
+@media (max-width: 900px) {
+  .container.index {
+    margin-left: 0;
+    max-width: 100vw;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.friends-section {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 32px 28px 24px 28px;
+  margin: 40px auto 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  max-width: 800px;
+  min-width: 0;
+  text-align: left;
+}
+.friends-section h2 {
+  font-size: 2.2rem;
+  color: #22315a;
+  margin-bottom: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.friends-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.friends-list li {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 4px rgba(34,49,90,0.06);
+  font-size: 1.15rem;
+  transition: box-shadow 0.2s;
+}
+.friends-list li:hover {
+  box-shadow: 0 4px 16px rgba(34,49,90,0.10);
+}
+.friends-list a {
+  color: #38598b;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.friends-list a:hover {
+  color: #22315a;
+  text-decoration: underline;
+}
+@media (max-width: 900px) {
+  .friends-section {
+    max-width: 98vw;
+    padding: 16px 4px;
+  }
+}
+
+/* Force main sections to always be 3/5 (60%) of the page width and centered */
+.education-section,
+.skills-section,
+.publications-section,
+.projects-section {
+  width: 60vw;
+  max-width: 60vw;
+  min-width: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .education-section,
+  .skills-section,
+  .publications-section,
+  .projects-section {
+    width: 98vw;
+    max-width: 98vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+}
+
+/* Make each item dynamically adjust its width to 60% of the page, centered */
+.education-section .edu-item,
+.skills-section .edu-item,
+.publications-section .edu-item,
+.projects-section .edu-item {
+  width: 100%; /* inherit from parent section, which is 60vw */
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .education-section .edu-item,
+  .skills-section .edu-item,
+  .publications-section .edu-item,
+  .projects-section .edu-item {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 

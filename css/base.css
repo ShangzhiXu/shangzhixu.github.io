@@ -1097,4 +1097,55 @@ body.hidden {
   }
 }
 
+.friends-section {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 32px 28px 24px 28px;
+  margin: 40px auto 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  max-width: 800px;
+  min-width: 0;
+  text-align: left;
+}
+.friends-section h2 {
+  font-size: 2.2rem;
+  color: #22315a;
+  margin-bottom: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.friends-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.friends-list li {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 4px rgba(34,49,90,0.06);
+  font-size: 1.15rem;
+  transition: box-shadow 0.2s;
+}
+.friends-list li:hover {
+  box-shadow: 0 4px 16px rgba(34,49,90,0.10);
+}
+.friends-list a {
+  color: #38598b;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.friends-list a:hover {
+  color: #22315a;
+  text-decoration: underline;
+}
+@media (max-width: 900px) {
+  .friends-section {
+    max-width: 98vw;
+    padding: 16px 4px;
+  }
+}
+
 

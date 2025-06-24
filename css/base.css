@@ -718,19 +718,18 @@ body.hidden {
 }
 
 .sidebar {
-  width: 240px;
-  min-width: 180px;
-  max-width: 320px;
+  overflow-y: auto;
+  max-height: 100vh;
+  width: 370px;
+  min-width: 220px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 100;
   background: var(--bg-body, #fff);
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* 水平方向居中 */
-  align-items: center;     /* 垂直方向居中 */
-  padding: 0;
-  box-shadow: 1px 0 0 0 #eee;
-  min-height: 100vh;
-  z-index: 10;
-  align-items: stretch !important;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+  padding-top: 160px;
 }
 .sidebar ul {
   list-style: none; /* 移除小点 */
@@ -769,7 +768,7 @@ body.hidden {
   min-width: 0;
   max-width: 100vw;
   width: 100%;
-  margin-left: 8rem !important;
+  margin-left: 270px !important;
 }
 
 .navbar-vertical {
@@ -835,19 +834,11 @@ body.hidden {
     width: 100%;
     min-width: 0;
     max-width: 100vw;
-    flex-direction: row;
-    justify-content: flex-start;
-    box-shadow: none;
-    padding: 10px 0;
-    min-height: unset;
-    align-items: center;
     height: auto;
+    box-shadow: none;
   }
   .main-content {
-    width: 100%;
-    max-width: 100vw;
-    margin-left: 0;
-    align-items: stretch;
+    margin-left: 0 !important;
   }
   .navbar-vertical {
     margin-top: 0;
@@ -873,8 +864,8 @@ body.hidden {
 
 .footer {
   margin-top: auto;
-  width: 100%;
-  margin-left: -10rem !important;
+  width: calc(100% - 370px);
+  margin-left: 170px !important;
   background: var(--bg-body);
   color: #666;
   box-sizing: border-box;
@@ -895,7 +886,7 @@ body.hidden {
 @media (max-width: 900px) {
   .footer {
     width: 100%;
-    margin-left: 0;
+    margin-left: 0 !important;
     padding-left: 0;
     padding-right: 0;
   }
@@ -911,6 +902,7 @@ body.hidden {
 }
 
 .container.index {
+  margin-left: 370px; /* Match the sidebar width for alignment */
   margin-top: 0 !important;
   padding-top: 0 !important;
   align-items: flex-start;
@@ -984,6 +976,9 @@ body.hidden {
     margin-left: 12px;
     padding-bottom: 0;
   }
+  .container.index {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 900px) {
@@ -991,6 +986,97 @@ body.hidden {
     padding: 10px 0;
     border-radius: 0;
   }
+}
+
+/* EDUCATION section styles */
+.education-section, .education-section * {
+  line-height: 1.4;
+  font-size: 1.22rem;
+}
+.education-section {
+  background: #f9f9fc;
+  border-radius: 12px;
+  padding: 28px 24px 18px 24px;
+  margin-bottom: 2.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.education-section h2 {
+  font-size: 2.4rem;
+  color: #22315a; /* deep navy */
+  margin-bottom: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: left;
+}
+.edu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.edu-left {
+  max-width: 72%;
+}
+.edu-school {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #222; /* dark gray */
+}
+.edu-degree {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #38598b; /* muted blue */
+}
+.edu-details {
+  font-size: 1.15rem;
+  color: #4e5d6c; /* slate gray */
+  margin-bottom: 2px;
+}
+.edu-right {
+  text-align: right;
+  min-width: 180px;
+  font-size: 1.15rem;
+  color: #6c757d; /* neutral gray */
+  font-style: italic;
+  line-height: 1.5;
+}
+.edu-scholarships {
+  margin-top: 4px;
+  margin-left: 0;
+  padding-left: 18px;
+  font-size: 1.15rem;
+  color: #22315a; /* deep navy for accent */
+}
+.edu-scholarships li {
+  color: #222; /* dark gray */
+  margin-bottom: 2px;
+}
+.projects-section .edu-school, .publications-section .edu-school {
+  color: #22315a; /* deep navy */
+}
+.projects-section .edu-degree, .publications-section .edu-degree {
+  color: #38598b; /* muted blue */
+}
+.projects-section .edu-details, .publications-section .edu-details {
+  color: #4e5d6c; /* slate gray */
+}
+@media (max-width: 900px) {
+  .education-section { max-width: 98vw; }
+  .edu-left { max-width: 100%; }
+}
+@media (max-width: 600px) {
+  .education-section { padding: 12px 4px; }
+  .edu-item { flex-direction: column; }
+  .edu-left, .edu-right { max-width: 100%; min-width: 0; text-align: left; }
+  .edu-right { margin-top: 4px; }
+}
+
+.sidebar-menu {
+  margin-top: 40px;
 }
 
 
